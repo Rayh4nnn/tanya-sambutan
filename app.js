@@ -13,6 +13,7 @@ const categoryList = document.querySelector('#category-list');
 const answerArea = document.querySelector('#answer-area');
 const questionForm = document.querySelector('#question-form');
 const questionInput = document.querySelector('#question-input');
+const sendButton = document.querySelector('.send-button');
 const statusTitle = document.querySelector('#status-title');
 const statusDot = document.querySelector('.status-dot');
 let currentLanguage = 'id';
@@ -481,7 +482,12 @@ questionForm.addEventListener('submit', event => {
   }
   handleQuestion(question);
   questionInput.value = '';
+  sendButton.classList.remove('is-ready');
   questionInput.focus();
+});
+
+questionInput.addEventListener('input', () => {
+  sendButton.classList.toggle('is-ready', questionInput.value.trim().length > 0);
 });
 
 function applyLanguage(language) {
