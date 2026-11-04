@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1E7BF0">
+    <meta id="page-description" name="description" content="Pusat FAQ interaktif dan chat petugas Kecamatan Sambutan.">
+    <title data-i18n="pageTitle">TanyaSambutan — Asisten layanan warga</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="faq-data.js" defer></script>
+    <script src="faq-en.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="chat-window" aria-label="Layanan TanyaSambutan">
+        <header class="topbar">
+          <a class="brand" href="#" aria-label="TanyaSambutan beranda">
+            <img class="brand-mark" src="assets/Logo_Kota_Samarinda.png" alt="">
+            <span class="brand-divider" aria-hidden="true"></span>
+            <span class="brand-copy">
+              <span class="brand-label" data-i18n="prototypeLabel">PROTOTYPE TUGAS KULIAH</span>
+              <strong>TanyaSambutan</strong>
+              <small data-i18n="government">Pemerintah Kota Samarinda</small>
+            </span>
+          </a>
+          <div class="header-actions">
+            <div class="language-toggle" aria-label="Language">
+              <button class="language-active" type="button" data-language="id" aria-pressed="true">ID</button>
+              <button type="button" data-language="en" aria-pressed="false">EN</button>
+            </div>
+            <div class="service-card" aria-label="Jadwal layanan">
+              <span class="service-label" data-i18n="serviceLabel">JADWAL LAYANAN</span>
+              <strong data-i18n="serviceWeekdays">Sen–Kam 08.00–16.00</strong>
+              <small data-i18n="serviceWeekend">Jumat 08.00–15.00 · Sabtu–Minggu libur</small>
+              <span class="service-status"><span class="status-dot" aria-hidden="true"></span><strong id="status-title">Memeriksa status...</strong></span>
+            </div>
+            <a class="contact-button" id="staff-status" href="https://wa.me/6285172298564" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="contact">Hubungi Petugas</span> <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </header>
+
+        <aside class="info-ribbon" aria-label="Informasi">
+          <span class="info-badge"><span aria-hidden="true">⚑</span> INFO</span>
+          <p data-i18n="notice">Ini adalah prototype tugas kuliah, bukan kanal layanan resmi. Untuk pengaduan, gunakan LAPOR.</p>
+          <a class="lapor-button" href="https://www.lapor.go.id/" target="_blank" rel="noopener noreferrer" data-i18n="lapor">Buka LAPOR! ↗</a>
+        </aside>
+
+        <div class="conversation" id="conversation" aria-live="polite">
+          <div class="date-divider"><span data-i18n="assistantLabel">ASISTEN LAYANAN KECAMATAN</span></div>
+          <div class="message-row bot-row">
+            <span class="avatar bot-avatar" aria-hidden="true">T</span>
+            <div class="message-content">
+              <span class="sender-name"><span data-i18n="assistantName">TanyaSambutan</span> <span data-i18n="assistantRole">· Asisten virtual</span></span>
+              <div class="bubble welcome-bubble">
+                <p data-i18n="welcome">Halo! 👋 Ada yang bisa saya bantu hari ini?</p>
+                <p class="welcome-hint" data-i18n="welcomeHint">Pilih topik atau tulis pertanyaanmu. Aku bantu cari informasinya.</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="category-section" aria-labelledby="category-title">
+            <h2 id="category-title" data-i18n="categoryTitle">JELAJAHI TOPIK</h2>
+            <div class="category-list" id="category-list"></div>
+          </section>
+
+          <section class="answer-area" id="answer-area" aria-label="Jawaban FAQ"></section>
+        </div>
+
+        <footer class="composer-area">
+          <form class="composer" id="question-form">
+            <label class="sr-only" for="question-input" data-i18n="inputLabel">Ketik pertanyaan</label>
+            <input id="question-input" name="question" type="text" placeholder="Ketik pertanyaanmu di sini..." data-i18n-placeholder="inputPlaceholder" autocomplete="off">
+            <button class="send-button" type="submit" aria-label="Kirim pertanyaan" data-i18n-aria="send">➤</button>
+          </form>
+          <div class="composer-help">
+            <span><span class="sparkle" aria-hidden="true">✦</span> <span data-i18n="faqDisclaimer">Jawaban awal dari FAQ layanan</span></span>
+            <a id="help-link" href="https://wa.me/6285172298564" target="_blank" rel="noopener noreferrer"><span data-i18n="helpLink">Tidak ketemu? Hubungi petugas</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </footer>
+      </section>
+      <p class="page-note"><span data-i18n="prototypeNote">Prototype tugas kuliah</span> <span>·</span> <span data-i18n="district">Kecamatan Sambutan, Kota Samarinda</span></p>
+    </main>
+  </body>
+</html>
